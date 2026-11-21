@@ -44,7 +44,8 @@ while True:
     print("2. View Expenses")
     print("3. Total Expenses")
     print("4. Exit")
-    print("5. Show Average")
+    print("5. Delete Expense")
+    print("6. Show Average")
 
     choice = input("Enter your choice: ")
 
@@ -81,9 +82,10 @@ while True:
     elif choice == "4":
         break
     elif choice == "5":
-        show_average()
-
-    elif choice == "5":
         delete_expense()
+    elif choice =="6":
+        show_average()
     else:
-        print("Invalid choice")
+        print("Invalid choice .")
+
+        
