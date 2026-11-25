@@ -1,3 +1,17 @@
+def show_average():
+
+    if not expenses:
+        print("No expenses recorded.")
+        return
+
+    total = 0
+
+    for expense in expenses:
+        total += expense["amount"]
+
+    average = total / len(expenses)
+
+    print("Average =", average)
 def delete_expense():
 
     if not expenses:
@@ -30,7 +44,8 @@ while True:
     print("2. View Expenses")
     print("3. Total Expenses")
     print("4. Exit")
-    print("5.delete Expense")
+    print("5. Show Average")
+
     choice = input("Enter your choice: ")
 
     if choice == "1":
@@ -65,6 +80,8 @@ while True:
 
     elif choice == "4":
         break
+    elif choice == "5":
+        show_average()
 
     elif choice == "5":
         delete_expense()
