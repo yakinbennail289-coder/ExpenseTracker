@@ -1,3 +1,26 @@
+def delete_expense():
+
+    if not expenses:
+        print("No expenses to delete.")
+        return
+
+    for i, expense in enumerate(expenses, start=1):
+        print(i, expense["description"])
+
+    choice = input("Expense number to delete: ")
+
+    if choice.isdigit():
+
+        index = int(choice) - 1
+
+        if 0 <= index < len(expenses):
+
+            removed = expenses.pop(index)
+
+            print("Deleted:",
+                  removed["description"])
+
+
 expenses = []
 
 while True:
@@ -7,7 +30,7 @@ while True:
     print("2. View Expenses")
     print("3. Total Expenses")
     print("4. Exit")
-
+    print("5.delete Expense")
     choice = input("Enter your choice: ")
 
     if choice == "1":
@@ -43,5 +66,7 @@ while True:
     elif choice == "4":
         break
 
+    elif choice == "5":
+        delete_expense()
     else:
         print("Invalid choice")
